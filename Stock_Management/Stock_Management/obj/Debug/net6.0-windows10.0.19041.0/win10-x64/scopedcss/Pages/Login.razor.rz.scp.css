@@ -1,0 +1,152 @@
+*[b-j5vegp2se9] {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* overall box */
+.box[b-j5vegp2se9] {
+    width: 200%;
+    max-width: 350px;
+    min-width: 0;
+    height: fit-content;
+    margin: 1rem;
+    border: 1px;
+}
+
+main[b-j5vegp2se9] {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -1.35rem 0;
+    transform: translateX(125px);
+}
+
+/* image(logo) */
+.box img[b-j5vegp2se9] {
+    width: 21rem;
+    height: 14rem;
+    margin: auto;
+    display: block;
+    align-content: center;
+}
+
+.login-wrapper[b-j5vegp2se9] {
+    height: fit-content;
+    position: relative;
+}
+
+    .login-wrapper h1[b-j5vegp2se9] {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1;
+        text-align: center;
+        margin: 1rem 0;
+        margin-bottom: 1.5rem;
+        color: #2A88AD;
+    }
+
+    .login-wrapper section[b-j5vegp2se9] {
+        padding: 1rem;
+        background-color: #2A88AD;
+        margin-top: 1rem;
+        border: 2px solid black;
+        border-radius: 0.15rem;
+        color: white;
+    }
+
+        .login-wrapper section h3[b-j5vegp2se9] {
+            line-height: 1.5;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .login-wrapper section p[b-j5vegp2se9] {
+            font-size: 0.87rem;
+            line-height: 1.5;
+            color: white;
+        }
+
+
+/* style below login text */
+
+.login-form[b-j5vegp2se9] {
+    display: block;
+    border: 1px solid black;
+    width: 22rem;
+    height: 17rem;
+    padding: 2rem;
+    padding-top: 1rem;
+    background: #FFFFFF;
+    align-content: center;
+
+}
+
+    .login-form > p[b-j5vegp2se9] {
+        font-size: 0.9rem;
+        color: darkred;
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        background-color: #ff4d4d42;
+        padding: 0.65rem;
+        border-radius: 0.17rem;
+    }
+
+    .login-form > label[b-j5vegp2se9] {
+        margin-bottom: 0.7rem;
+        cursor: pointer;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        margin-right: 1.5rem;
+    }
+
+    .login-form input[b-j5vegp2se9] {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border-radius: 0.15rem;
+        outline: none;
+        border: 1px solid #909090;
+        font-size: 0.85rem;
+        min-width: 0;
+    }
+
+        .login-form input[type="checkbox"][b-j5vegp2se9] {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding: 0.5rem;
+            border-radius: 0.15rem;
+            outline: none;
+            border: 1px solid #909090;
+            font-size: 0.85rem;
+            margin-right: 0.57rem;
+            cursor: pointer;
+        }
+
+    .login-form button[b-j5vegp2se9] {
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        font-weight: bold;
+        border: 2px solid black;
+        border-color: #2A88AD;
+        font-size: 0.835rem;
+        border-radius: 0.15rem;
+        background-color: white;
+        color: #2A88AD;
+        min-width: 0;
+    }
+
+        .login-form button:hover[b-j5vegp2se9] {
+            background-color: #2A88AD;
+            color: white;
+        }

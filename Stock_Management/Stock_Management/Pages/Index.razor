@@ -1,0 +1,20 @@
+﻿@page "/"
+@inject NavigationManager NavManager
+@using Stock_Management.Data;
+
+@code {
+    [CascadingParameter]
+    private UserCurrent globalUser { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (globalUser?.CurrentUser == null)
+        {
+            NavManager.NavigateTo("/login");
+        }
+        else
+        {
+            NavManager.NavigateTo("/dashboard");
+        }
+    }
+}

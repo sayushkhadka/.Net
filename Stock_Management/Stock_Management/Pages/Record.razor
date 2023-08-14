@@ -1,0 +1,152 @@
+﻿@page "/record"
+@using Stock_Management.Data;
+@using Stock_Management.Services;
+
+
+<ul>
+    <li><a class='@(currentTab == Status.Approve ? "active" : "")' @onclick='()=>CurrentTab(Status.Approve)'>Approved</a></li>
+    <li><a class='@(currentTab == Status.Reject ? "active" : "")' @onclick='()=>CurrentTab(Status.Reject)'>Rejected</a></li>
+</ul>
+
+<h1>Stock Records - @(currentTab == Status.Reject? "Rejected" : "Approved")</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total Price</th>
+            <th>Requested Date</th>
+            <th>@(currentTab == Status.Reject ? "Rejected" : "Approved") Date</th>
+            <th>Requested By</th>
+            <th>@(currentTab == Status.Reject ? "Rejected" : "Approved") By</th>
+        </tr>
+    </thead>
+
+    @if (currentTab == Status.Reject)
+    {
+        <tbody>
+
+            @if (rejectedHistories != null && rejectedHistories.Count > 0)
+            {
+                @foreach (var history in rejectedHistories)
+                {
+                    <tr>
+                        @{
+                            var item = ServiceStock.FetchItemById(history.ItemId);
+                        }
+                        <td>@item.Name</td>
+                        <td>@history.Quantity</td>
+                        <td>@item.UnitPrice</td>
+                        <td>
+                            @(
+                                item.UnitPrice * history.Quantity
+                                )
+                        </td>
+                        <td>@history.DateRequested.ToString("dd MMM, yyyy hh:mm tt")</td>
+                        <td>@history.DateApproved.ToString("dd MMM, yyyy hh:mm tt")</td>
+                        <td>
+                            @{
+                                var takenBy = ServiceUser.FetchUserById(history.TakenBy);
+                                <span>
+                                    @(
+                                    takenBy == null ? "system" : (takenBy.FirstName + ' ' + takenBy.LastName)
+                                        )
+                                </span>
+                            }
+                        </td>
+
+                        <td>
+                            @{
+                                var actedBy = ServiceUser.FetchUserById(history.ActionedBy);
+                                <span>
+                                    @(
+                                    actedBy == null ? "Pending" : (actedBy.FirstName + ' ' + actedBy.LastName)
+                                        )
+                                </span>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            }
+            else
+            {
+                <tr class="emptyTable"></tr>
+            }
+        </tbody>
+    }
+
+    @if (currentTab == Status.Approve)
+    {
+        <tbody>
+
+            @if (approvedHistories != null && approvedHistories.Count > 0)
+            {
+                @foreach (var history in approvedHistories)
+                {
+                    <tr>
+                        @{
+                            var item = ServiceStock.FetchItemById(history.ItemId);
+                        }
+                        <td>@item.Name</td>
+                        <td>@history.Quantity</td>
+                        <td>@item.UnitPrice</td>
+                        <td>
+                            @(
+                                item.UnitPrice * history.Quantity
+                                )
+                        </td>
+                        <td>@history.DateRequested.ToString("dd MMM, yyyy hh:mm tt")</td>
+                        <td>@history.DateApproved.ToString("dd MMM, yyyy hh:mm tt")</td>
+                        <td>
+                            @{
+                                var takenBy = ServiceUser.FetchUserById(history.TakenBy);
+                                <span>
+                                    @(
+                                    takenBy == null ? "system" : (takenBy.FirstName + ' ' + takenBy.LastName)
+                                        )
+                                </span>
+                            }
+                        </td>
+
+                        <td>
+                            @{
+                                var actedBy = ServiceUser.FetchUserById(history.ActionedBy);
+                                <span>
+                                    @(
+                                    actedBy == null ? "Pending" : (actedBy.FirstName + ' ' + actedBy.LastName)
+                                        )
+                                </span>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            }
+            else
+            {
+                <tr class="emptyTable"></tr>
+            }
+        </tbody>
+    }
+</table>
+
+@code {
+    [CascadingParameter]
+    private UserCurrent globalUser { get; set; }
+    private List<RecordStock> rejectedHistories { get; set; }
+    private List<RecordStock> approvedHistories { get; set; }
+    private Status currentTab { get; set; } = Status.Approve;
+
+    protected override void OnInitialized()
+    {
+        rejectedHistories = ServiceStock.FetchRejectedItemHistory();
+        approvedHistories = ServiceStock.FetchApprovedItemHistory();
+    }
+
+    private void CurrentTab(Status action)
+    {
+        currentTab = action;
+    }
+}

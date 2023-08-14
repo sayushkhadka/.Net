@@ -1,0 +1,136 @@
+ul[b-tfsqfdnww1] {
+    display: flex;
+    list-style: none;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+    ul > li > a[b-tfsqfdnww1] {
+        font-size: 0.85rem;
+        color: black;
+        font-weight: bold;
+        padding: 0.35rem 0.5rem;
+        text-decoration: none;
+        cursor: pointer;
+        display: block;
+        top: 2px;
+        position: relative;
+    }
+
+.active[b-tfsqfdnww1] {
+    color: #2A88AD;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+}
+
+h1[b-tfsqfdnww1] {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1b1b1b;
+}
+
+table[b-tfsqfdnww1] {
+    display: block;
+    overflow-x: auto;
+    margin-top: 1rem;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    max-width: fit-content;
+    position: relative;
+}
+
+    table td:first-child[b-tfsqfdnww1], th:first-child[b-tfsqfdnww1] {
+        min-width: 150px;
+    }
+
+    table td:nth-child(2)[b-tfsqfdnww1], th:nth-child(2)[b-tfsqfdnww1] {
+        min-width: 90px;
+    }
+
+    table td:nth-child(3)[b-tfsqfdnww1], th:nth-child(3)[b-tfsqfdnww1] {
+        min-width: 93px;
+    }
+
+    table td:nth-child(4)[b-tfsqfdnww1], th:nth-child(4)[b-tfsqfdnww1] {
+        min-width: 99px;
+    }
+
+    table td:nth-child(5)[b-tfsqfdnww1], th:nth-child(5)[b-tfsqfdnww1] {
+        min-width: 180px;
+    }
+
+    table td:nth-child(6)[b-tfsqfdnww1], th:nth-child(6)[b-tfsqfdnww1] {
+        min-width: 150px;
+    }
+
+
+    table td:nth-child(7)[b-tfsqfdnww1], th:nth-child(7)[b-tfsqfdnww1] {
+        min-width: 140px;
+    }
+
+    table td:last-child[b-tfsqfdnww1], th:last-child[b-tfsqfdnww1] {
+        min-width: 120px;
+    }
+
+
+    table > thead[b-tfsqfdnww1] {
+        border-bottom: 2px solid black;
+        background-color: #2A88AD;
+        color: white;
+    }
+
+        table > thead > tr > th[b-tfsqfdnww1] {
+            font-size: 1rem;
+            color: white;
+            padding: 0.5rem;
+            border-right: 2px solid black;
+            text-align: center;
+        }
+
+    table > tbody > tr[b-tfsqfdnww1] {
+        cursor: pointer;
+        border-bottom: 2px solid black;
+    }
+
+        table > tbody > tr:last-child[b-tfsqfdnww1] {
+            border: none;
+        }
+
+    table td[b-tfsqfdnww1] {
+        padding: 0.5rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: black;
+        border-right: 2px solid black;
+    }
+
+td:last-child[b-tfsqfdnww1], th:last-child[b-tfsqfdnww1] {
+    border: none;
+}
+
+table > tbody > tr > td:last-child[b-tfsqfdnww1] {
+    text-align: center;
+}
+
+.emptyTable[b-tfsqfdnww1] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 5rem;
+}
+
+    .emptyTable[b-tfsqfdnww1]::before {
+        content: "No stock records.";
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 42px);
+        top: 42px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #a0a0a0;
+        font-weight: bold;
+        line-height: 4;
+    }

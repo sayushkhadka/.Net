@@ -1,0 +1,144 @@
+﻿@page "/update"
+@using Stock_Management.Data;
+@using Stock_Management.Services;
+
+<main>
+    <ul>
+        <li><a class='@(currentTab == "password" ? "active" : "")' @onclick='()=>CurrentTab("password")'>Password</a></li>
+        <li><a class='@(currentTab == "name" ? "active" : "")' @onclick='()=>CurrentTab("name")'>Name</a></li>
+    </ul>
+
+    <h3>Change @currentTab </h3>
+
+    <p><b>Note: </b>Fill the information correctly.</p>
+
+    @if (currentTab == "password")
+    {
+
+        <form @onsubmit="handleChangePassword">
+            <input type="password" @bind="@currentPassword" placeholder="Current Password" />
+            <input type="@passType" @bind="@newPassword" placeholder="New Password" />
+            <input type="@passType" @bind="@confirmPassword" placeholder="Confirm New Password" />
+
+            <label for="show-password">
+                <input type="checkbox" id="show-password" @onchange="handlePassword" />
+                Show password
+            </label>
+
+            <button>Change Password</button>
+        </form>
+    }
+    else
+    {
+        <form @onsubmit="HandleChangeName">
+            <input type="password" @bind="@currentPassword" placeholder="Current Password" />
+            <input type="text" @bind="@firstName" placeholder="First Name" />
+            <input type="text" @bind="@lastName" placeholder="Last Name" />
+
+            <button>Change Name</button>
+        </form>
+    }
+
+    @if (message.Length > 0)
+    {
+        <p class="message-@messageSucess">@message</p>
+    }
+</main>
+
+@code {
+    [CascadingParameter]
+    private UserCurrent globalUser { get; set; }
+    private string currentPassword { get; set; }
+    private string newPassword { get; set; }
+    private string confirmPassword { get; set; }
+    private string firstName { get; set; }
+    private string lastName { get; set; }
+    private string currentTab { get; set; } = "password";
+
+    string message = "";
+    string passType = "password";
+    string messageSucess = "warning";
+
+    public void handlePassword()
+    {
+        passType = passType == "password" ? "text" : "password";
+    }
+
+    public void handleChangePassword()
+    {
+        if (currentPassword == null)
+        {
+            messageSucess = "warning";
+            message = "Please enter your current password";
+            return;
+        }
+
+        if (newPassword == null || confirmPassword == null)
+        {
+            messageSucess = "warning";
+            message = "New password cannot be empty!";
+            return;
+        }
+
+        if (newPassword != confirmPassword)
+        {
+            messageSucess = "warning";
+            message = "Please confirm your password!";
+            return;
+        }
+
+        try
+        {
+            globalUser.CurrentUser = ServiceUser.ChangeUserPassword(globalUser.CurrentUser.Id, currentPassword, newPassword);
+            messageSucess = "info";
+            message = "Password changed sucessfully";
+            newPassword = "";
+            confirmPassword = "";
+            currentPassword = "";
+        }
+        catch (Exception e)
+        {
+            messageSucess = "warning";
+            message = e.Message;
+        }
+    }
+
+    public void HandleChangeName()
+    {
+        if (currentPassword == null)
+        {
+            messageSucess = "warning";
+            message = "Please enter your current password";
+            return;
+        }
+
+        if (firstName == null || lastName == null)
+        {
+            messageSucess = "warning";
+            message = "Please provide your names";
+            return;
+        }
+
+        try
+        {
+            globalUser.CurrentUser = ServiceUser.ChangeUserDetail(globalUser.CurrentUser.Id, firstName, lastName, currentPassword);
+            messageSucess = "info";
+            message = "Name updated sucessfully!";
+            currentPassword = "";
+            firstName = "";
+            lastName = "";
+        }
+        catch (Exception e)
+        {
+            messageSucess = "warning";
+            message = e.Message;
+        }
+    }
+
+    private void CurrentTab(string tab)
+    {
+        message = "";
+        currentPassword = "";
+        currentTab = tab;
+    }
+}

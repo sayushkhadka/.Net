@@ -1,0 +1,350 @@
+*[b-upv51k7ir5] {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main[b-upv51k7ir5] {
+    display: block;
+}
+
+    main > div[b-upv51k7ir5] {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        max-width: 743px;
+    }
+
+        main > div > h3[b-upv51k7ir5] {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #1b1b1b;
+        }
+
+        main > div > button[b-upv51k7ir5] {
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: none;
+            border: 2px solid black;
+            background-color: transparent;
+            color: #2A88AD;
+            padding: 0.57rem;
+            border-radius: 0.3rem;
+            transition: 0.15s ease-in-out;
+        }
+
+            main > div > button:hover[b-upv51k7ir5] {
+                color: white;
+                background-color: #2A88AD;
+            }
+
+            main > div > button > span[b-upv51k7ir5] {
+                font-size: 0.7rem;
+                margin-right: 0.35rem;
+            }
+
+    main > table[b-upv51k7ir5] {
+        display: block;
+        overflow-x: auto;
+        margin-top: 1rem;
+        border: 2px solid black;
+        border-radius: 0.3rem;
+        max-width: fit-content;
+    }
+
+        main > table td:first-child[b-upv51k7ir5] {
+            min-width: 150px;
+        }
+
+        main > table td:nth-child(2)[b-upv51k7ir5] {
+            min-width: 90px;
+        }
+
+        main > table td:nth-child(3)[b-upv51k7ir5] {
+            min-width: 40px;
+        }
+
+        main > table td:nth-child(4)[b-upv51k7ir5] {
+            min-width: 127px;
+        }
+
+        main > table td:nth-child(5)[b-upv51k7ir5] {
+            min-width: 180px;
+        }
+
+        main > table td:last-child[b-upv51k7ir5] {
+            min-width: 115px;
+        }
+
+
+        main > table > thead[b-upv51k7ir5] {
+            border-bottom: 2px solid black;
+            background-color: #2A88AD;
+        }
+
+        main > table > tbody > tr[b-upv51k7ir5] {
+            cursor: pointer;
+            border-bottom: 2px solid black;
+        }
+
+            main > table > tbody > tr:last-child[b-upv51k7ir5]{
+                border: none;
+            }
+
+            main > table > thead > tr > th[b-upv51k7ir5] {
+                font-size: 1rem;
+                color: white;
+                padding: 0.5rem;
+                border-right: 2px solid black;
+                text-align: center;
+            }
+
+        main > table td[b-upv51k7ir5] {
+            padding: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: black;
+            border-right: 2px solid black;
+        }
+
+td:last-child[b-upv51k7ir5], th:last-child[b-upv51k7ir5] {
+    border: none;
+}
+
+main > table > tbody > tr > td:last-child[b-upv51k7ir5] {
+    text-align: center;
+}
+
+td[b-upv51k7ir5]  .changePassword {
+    background: white;
+    color: black;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #2A88AD;
+    display: block;
+    margin: auto;
+    border-radius: 0.3rem;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+    td[b-upv51k7ir5]  .changePassword:hover {
+        background: #2A88AD;
+        color: white;
+    }
+
+td > button[b-upv51k7ir5] {
+    padding: 0.5rem;
+    border: 2px solid #e33030;
+    border-radius: 0.15rem;
+    color: #e33030;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    transition: 0.15s ease-in-out;
+    background-color: transparent;
+}
+
+    td > button:hover[b-upv51k7ir5] {
+        background-color: #e33030;
+        color: white;
+    }
+
+    td > button:disabled[b-upv51k7ir5] {
+        background-color: white;
+        color: #f19a9a;
+        border: 2px solid #f19a9a;
+    }
+
+    td > button > span[b-upv51k7ir5] {
+        margin-right: 0.5rem;
+    }
+
+.background[b-upv51k7ir5] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000092;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 500px;
+    overflow: auto;
+}
+
+.action-modal[b-upv51k7ir5] {
+    background: green;
+}
+
+    .action-modal > div[b-upv51k7ir5] {
+        padding: 1rem;
+        width: 100%;
+        max-width: 450px;
+        background-color: white;
+        border-radius: 0.35rem;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+        .action-modal > div > h3[b-upv51k7ir5] {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2A88AD;
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .action-modal > div > p[b-upv51k7ir5] {
+            background-color: #fe7d7dba;
+            margin: auto;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            font-weight: bold;
+            font-size: 0.87rem;
+            border-radius: 0.35rem;
+            width: fit-content;
+            color: #333333;
+        }
+
+        .action-modal > div > form section[b-upv51k7ir5] {
+            display: grid;
+            grid-template-columns: calc(50% - 0.5rem) calc(50% - 0.5rem);
+            grid-gap: 1rem;
+        }
+
+        .action-modal > div > form input[b-upv51k7ir5] {
+            display: block;
+            width: 100%;
+            padding: 0.35rem;
+            outline: none;
+            border: 2px solid #909090;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-modal > div > form div[b-upv51k7ir5] {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 1.5rem;
+        }
+
+        .action-modal > div > form > label[b-upv51k7ir5] {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            cursor: pointer;
+            margin-top: 0.7rem;
+        }
+
+            .action-modal > div > form > label > span[b-upv51k7ir5] {
+                font-weight: normal !important;
+                white-space: nowrap;
+            }
+
+        .action-modal > div > form > div > label[b-upv51k7ir5] {
+            display: flex;
+            width: fit-content;
+            cursor: pointer;
+            align-items: center;
+        }
+
+        .action-modal > div > form label span[b-upv51k7ir5] {
+            font-weight: bold;
+        }
+
+        .action-modal > div > form input[type="radio"][b-upv51k7ir5], .action-modal > div > form input[type="checkbox"][b-upv51k7ir5] {
+            margin-bottom: 0;
+            margin-left: 0.5rem;
+            cursor: pointer;
+        }
+
+        .action-modal > div > form input[type="checkbox"][b-upv51k7ir5] {
+            margin: 0;
+            margin-right: 0.5rem;
+            margin-left: 0;
+        }
+
+        .action-modal > div > form button[b-upv51k7ir5] {
+            display: block;
+            border: 2px solid black;
+            border-color: #2A88AD;
+            background-color: white;
+            color: #2A88AD;
+            border-radius: 0.25rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+            .action-modal > div > form button:hover[b-upv51k7ir5] {
+                background-color: #2A88AD;
+                color:white;
+            }
+
+.delete-background[b-upv51k7ir5] {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #00000058;
+}
+
+.delete-dialog[b-upv51k7ir5] {
+    width: 100%;
+    position: fixed;
+    max-width: 300px;
+    padding: 0.7rem;
+    border-radius: 0.23rem;
+    border: 2px solid #777777;
+    background: #fff;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+    .delete-dialog h2[b-upv51k7ir5] {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: black;
+    }
+
+    .delete-dialog p[b-upv51k7ir5] {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0.7rem;
+    }
+
+    .delete-dialog > div > button[b-upv51k7ir5] {
+        padding: 0.35rem 0.5rem;
+        background-color: white;
+        outline: none;
+        color: #e33030;
+        font-weight: bold;
+        font-size: 0.85rem;
+        border: 2px solid #e33030;
+        border-radius: 0.23rem;
+    }
+
+        .delete-dialog > div > button:hover[b-upv51k7ir5] {
+            background-color: #e33030;
+            color: white;
+        }
+
+.cancel[b-upv51k7ir5] {
+    color: #333333 !important;
+    border-color: #333333 !important;
+    margin-right: 0.5rem;
+}
+
+    .cancel:hover[b-upv51k7ir5] {
+        background-color: #333333 !important;
+        color: white !important;
+    }

@@ -1,0 +1,87 @@
+﻿@using Stock_Management.Data;
+@using Stock_Management.Services;
+
+<div class="top-row ps-3 navbar">
+    <div class="container-fluid">
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="oi oi-menu"></span>
+        </button>
+        <a class="navbar-brand" href="">Bike Service Center</a>
+    </div>
+</div>
+
+<section class='@(navCollapse != null ? "nav-back" : "")' @onclick="ToggleNavMenu"></section>
+<div class="nav @navCollapse" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        @if (navCollapse != null)
+        {
+                <div class="container-fluid sideLogo">
+                    <a class="navbar-brand" href="">Bike Service Center</a>
+                </div>
+        }
+
+        
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="item" Match="NavLinkMatch.All">
+                <span class="oi oi-document" aria-hidden="true"></span> Stocks
+            </NavLink>
+        </div>
+
+        @if (userType == TypeUser.Admin)
+        {
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="record" Match="NavLinkMatch.All">
+                        <span class="oi oi-hard-drive" aria-hidden="true"></span> Stock Records
+                    </NavLink>
+                </div>
+
+                 <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="request" Match="NavLinkMatch.All">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Stock Requests
+                    </NavLink>
+                </div>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="staffs">
+                        <span class="oi oi-person" aria-hidden="true"></span> Staffs
+                    </NavLink>
+                </div>
+        }
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="update">
+                <span class="oi oi-loop-circular" aria-hidden="true"></span> Update Details
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="dashboard" Match="NavLinkMatch.All">
+                <span class="oi oi-bar-chart" aria-hidden="true"></span> Chart
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3 last-menu">
+            <button class="logout" @onclick="HandleLogout"><span class="oi oi-account-logout" /> Logout</button>
+        </div>
+    </nav>
+</div>
+
+@code {
+    [Parameter]
+    public string username { get; set; }
+    [Parameter]
+    public TypeUser userType { get; set; }
+    [Parameter]
+    public EventCallback HandleLogout { get; set; }
+
+    string navCollapse = null;
+
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        navCollapse = navCollapse == "navCollapse" ? null : "navCollapse";
+    }
+}
